@@ -3,65 +3,38 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Oddeven using JS</title>
+    <title>Text move w mouse</title>
     <style>
       * {
         padding: 0;
         box-sizing: border-box;
       }
-      .app,
-      .app > * {
+      div {
+        position: absolute;
+      }
+      input {
         padding: 1rem;
-        margin: 0.5rem 0;
-      }
-      .app > input,
-      .app > label {
-        font-size: 1.5rem;
-        padding: 0.5rem;
-      }
-      .funtions > * {
-        margin: 0 0.2rem;
-        padding: 0.5rem;
+        margin: 1rem 0 0 0;
       }
     </style>
   </head>
   <body>
-    <div class="app">
-      <label for="a">First Number(a): </label>
-      <input type="number" name="a" id="a" /> <br />
-
-      <label for="b">Second Number(b):</label>
-      <input type="number" name="b" id="b" /><br />
-
-      <label for="result">Result: </label>
-      <input type="text" name="result" id="ra" placeholder="a is .." disabled />
-      <input
-        type="text"
-        name="result"
-        id="rb"
-        disabled
-        placeholder="b is ..."
-      /><br />
-
-      <div class="funtions">
-        <button type="button" id="oddeven">Odd and Even</button>
-      </div>
-    </div>
+    X -> <input type="number" class="x" disabled /><br />
+    Y -> <input type="number" class="y" disabled />
+    <div class="movableText">My name is Smit!</div>
 
     <script>
-      const ra = document.querySelector("#ra");
-      const rb = document.querySelector("#rb");
+      let text = document.querySelector(".movableText");
+      let x_inp = document.querySelector(".x");
+      let y_inp = document.querySelector(".y");
 
-      const button = document.querySelector("#oddeven");
-      button.addEventListener("click", check);
+      document.addEventListener("mousemove", moveText);
 
-      function check() {
-        const a = Number(document.querySelector("#a").value);
-        const b = Number(document.querySelector("#b").value);
-
-        // console.log(a, b);
-        ra.value = `${a} is ${a % 2 === 0 ? "Even" : "Odd"}`;
-        rb.value = `${b} is ${b % 2 === 0 ? "Even" : "Odd"}`;
+      function moveText(e) {
+        text.style.top = `${e.pageY}px`;
+        text.style.left = `${e.pageX}px`;
+        x_inp.value = e.pageX;
+        y_inp.value = e.pageY;
       }
     </script>
   </body>
