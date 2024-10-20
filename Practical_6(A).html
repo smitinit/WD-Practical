@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator using JS</title>
+    <style>
+      * {
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .app,
+      .app > * {
+        padding: 1rem;
+        margin: 0.5rem 0;
+      }
+      .app > input,
+      .app > label {
+        font-size: 2rem;
+        padding: 0.5rem;
+      }
+      .funtions > * {
+        margin: 0 0.2rem;
+        padding: 0.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="app">
+      <label for="a">First Number(a): </label>
+      <input type="number" name="a" id="a" /> <br />
+
+      <label for="b">Second Number(b):</label>
+      <input type="number" name="b" id="b" /><br />
+
+      <label for="result">Result: </label>
+      <input type="number" name="result" id="result" disabled /><br />
+
+      <div class="funtions">
+        <button name="add">Add</button>
+        <button name="sub">Subtract</button>
+        <button name="mul">Multiply</button>
+        <button name="div">Divide</button>
+        <button name="pov">Power(a^b)</button>
+      </div>
+    </div>
+
+    <script>
+      const result = document.querySelector("#result");
+      const button = document.querySelectorAll("button");
+
+      button.forEach((btn) => btn.addEventListener("click", handleClick));
+
+      function handleClick(e) {
+        const a = Number(document.querySelector("#a").value);
+        const b = Number(document.querySelector("#b").value);
+        // console.log(a, b);
+
+        const btnName = e.target.name;
+        switch (btnName) {
+          case "add":
+            add(a, b);
+            break;
+          case "mul":
+            mul(a, b);
+            break;
+          case "div":
+            div(a, b);
+            break;
+          case "pov":
+            pov(a, b);
+            break;
+          case "sub":
+            sub(a, b);
+            break;
+        }
+      }
+
+      const add = (a, b) => (result.value = a + b);
+      const sub = (a, b) => (result.value = a - b);
+      const mul = (a, b) => (result.value = a * b);
+      const pov = (a, b) => (result.value = a ** b);
+      const div = (a, b) => {
+        if (b === 0) return (result.value = 0);
+        return (result.value = a / b);
+      };
+    </script>
+  </body>
+</html>
