@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>External Stylesheet</title>
+    <style>
+      * {
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        text-align: center;
+      }
+
+      [id$="heading"] {
+        color: blue;
+      }
+      [id$="first-div"] {
+        background-color: blue;
+        color: white;
+      }
+      [id$="paragraph"] {
+        background-color: blue;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1 id="heading">Test page</h1>
+      <div id="first-div">The first div Element</div>
+      <div id="second">The second div Element</div>
+      <div id="third">The third div Element</div>
+      <p id="paragraph">Paragraph Text</p>
+    </main>
+  </body>
+</html>
