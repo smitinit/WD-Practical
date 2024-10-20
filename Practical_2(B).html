@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        padding: 1rem;
+      }
+      h1 {
+        font-size: 3rem;
+        text-align: center;
+      }
+
+      form {
+        padding: 1rem;
+      }
+      form > fieldset {
+        padding: 1rem;
+      }
+      fieldset > * {
+        padding: 0.3rem;
+        margin: 0.3rem;
+      }
+      form > button {
+        width: 5rem;
+        height: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Student Registration</h1>
+    <form>
+      <fieldset>
+        <legend>User Details</legend>
+
+        <label for="firstname">First Name: </label>
+        <input id="firstname" name="firstname" type="text" /><br />
+
+        <label for="middlename">Middle Name:</label>
+        <input id="middlename" name="firstname" type="text" /><br />
+
+        <label for="lastname">Last Name:</label>
+        <input id="lastname" name="firstname" type="text" /><br />
+
+        <label for="gender">Gender:</label>
+        <select name="gender" id="gender">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+      </fieldset>
+      <br />
+
+      <fieldset>
+        <legend>User Crediantials</legend>
+
+        <label for="phone">Phone No.:</label>
+        <input id="phone" name="phone" type="number" /><br />
+
+        <label for="email">Email:</label>
+        <input id="email" name="email" type="email" /><br />
+      </fieldset>
+      <br />
+      <fieldset>
+        <legend>Location Details</legend>
+
+        <label for="city">City:</label>
+        <input id="city" name="city" type="text" /><br />
+
+        <label for="state">State:</label>
+        <input id="state" name="state" type="text" /><br />
+
+        <label for="country">Country:</label>
+        <input id="country" name="country" type="text" /><br />
+
+        <label for="address">Address:</label>
+        <textarea id="address" name="address"></textarea><br />
+
+        <label for="pincode">Pincode:</label>
+        <input id="pincode" name="pincode" type="number" /><br />
+      </fieldset>
+      <br />
+
+      <fieldset>
+        <legend>Additional</legend>
+        <label for="hobbies">Hobbies:</label>
+        <input id="hobbies" name="hobbies" type="text" /><br />
+      </fieldset>
+      <br />
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>
