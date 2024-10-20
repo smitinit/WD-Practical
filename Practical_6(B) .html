@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator using JS</title>
+    <style>
+      * {
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        padding: 5rem;
+      }
+      .funtions > * {
+        margin: 0 0.2rem;
+        padding: 0.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Counter: <span id="result"></span></p>
+
+    <div class="funtions">
+      <button type="button" name="inc">Increase ++</button>
+      <button type="button" name="dec">Decrease --</button>
+      <button type="reset" onclick="location.reload()">Reset</button>
+    </div>
+
+    <script>
+      const result = document.querySelector("#result");
+      const button = document.querySelectorAll("button");
+      let counter = 0;
+      result.textContent = 0;
+      button.forEach((btn) => btn.addEventListener("click", handleClick));
+
+      function handleClick(e) {
+        const btnName = e.target.name;
+        switch (btnName) {
+          case "inc":
+            inc();
+            break;
+          case "dec":
+            dec();
+            break;
+        }
+      }
+
+      const inc = () => (result.textContent = ++counter);
+      const dec = () => (result.textContent = --counter);
+    </script>
+  </body>
+</html>
