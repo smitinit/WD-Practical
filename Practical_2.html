@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Type of Lists</title>
+  </head>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    body {
+      padding: 1rem;
+    }
+    ol,
+    ul,
+    dl {
+      font-size: 2.5rem;
+      margin: 5rem 0 0 5rem;
+    }
+    ol,
+    ul,
+    dl > li {
+      padding: 1rem;
+    }
+    h1 {
+      font-size: 5rem;
+      text-align: center;
+    }
+    h2 {
+      font-size: 2rem;
+      margin-top: 1rem;
+      text-align: center;
+    }
+    dl > dd {
+      padding: 1rem;
+    }
+    div > ul {
+      margin: 0 0 0 5rem;
+    }
+  </style>
+  <body>
+    <h1>All Lists</h1>
+
+    <hr />
+
+    <h2>ORDER LIST (ol)</h2>
+    <ol>
+      <li>Milk</li>
+      <li>Bread</li>
+      <li>Apples</li>
+      <li>Banana</li>
+      <li>Cookies</li>
+    </ol>
+
+    <hr />
+
+    <h2>UNORDER LIST (ul)</h2>
+    <ul>
+      <li>Step 1: Gather ingredients</li>
+      <li>Step 2: Take all as required</li>
+      <li>Step 3: Mix them</li>
+      <li>Step 4: Bake for 30 minutes</li>
+      <li>Step 5: Enjoy!</li>
+    </ul>
+
+    <hr />
+
+    <h2>DEFINATION LIST (dl)</h2>
+    <dl>
+      <dt><i>-HTML</i></dt>
+      <dd>
+        HTML stands for HyperText Markup Language. It is the standard language
+        for creating webpages.
+      </dd>
+
+      <dt><i>-CSS</i></dt>
+      <dd>
+        CSS stands for Cascading Style Sheets. It describes how HTML elements
+        are to be displayed on screen.
+      </dd>
+
+      <dt><i>-JavaScript</i></dt>
+      <dd>
+        JavaScript is a programming language used to create dynamic and
+        interactive content on websites.
+      </dd>
+    </dl>
+
+    <hr />
+
+    <h2>NESTED LIST</h2>
+    <div>
+      <ul>
+        <li>
+          Fruits
+          <ul style="margin: 2rem">
+            <li>Apples</li>
+            <li>Bananas</li>
+            <li>Oranges</li>
+          </ul>
+        </li>
+        <li>
+          Vegetables
+          <ul style="margin: 2rem">
+            <li>Carrots</li>
+            <li>Broccoli</li>
+            <li>Spinach</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
