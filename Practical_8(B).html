@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Uppercase first letter of string</title>
+  </head>
+  <body>
+    <script>
+      function firstLettertoUpperCase(f) {
+        return f[0].toUpperCase() + f.slice(1);
+      }
+      function ToUpperCase(string) {
+        return string
+          .trim()
+          .split(" ")
+          .map((f) => firstLettertoUpperCase(f))
+          .join(" ");
+      }
+      console.log(ToUpperCase("  smit patel  "));
+      console.log(ToUpperCase("   jay shah  "));
+      console.log(ToUpperCase("  miren patel  "));
+      console.log(ToUpperCase("  karan rajubhai prajapati  "));
+    </script>
+  </body>
+</html>
