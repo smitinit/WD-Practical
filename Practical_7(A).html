@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator using JS</title>
+    <style>
+      * {
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .app,
+      .app > * {
+        padding: 1rem;
+        margin: 0.5rem 0;
+      }
+      .app > input,
+      .app > label {
+        font-size: 1.5rem;
+        padding: 0.5rem;
+      }
+      .funtions > * {
+        margin: 0 0.2rem;
+        padding: 0.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="app">
+      <label for="a">First Number(a): </label>
+      <input type="number" name="a" id="a" /> <br />
+
+      <label for="b">Second Number(b):</label>
+      <input type="number" name="b" id="b" /><br />
+
+      <label for="result">Result: </label>
+      <input type="text" name="result" id="ra" placeholder="a is .." disabled />
+      <input
+        type="text"
+        name="result"
+        id="rb"
+        disabled
+        placeholder="b is ..."
+      /><br />
+
+      <div class="funtions">
+        <button type="button" id="oddeven">Odd and Even</button>
+      </div>
+    </div>
+
+    <script>
+      const ra = document.querySelector("#ra");
+      const rb = document.querySelector("#rb");
+
+      const button = document.querySelector("#oddeven");
+      button.addEventListener("click", check);
+
+      function check() {
+        const a = Number(document.querySelector("#a").value);
+        const b = Number(document.querySelector("#b").value);
+
+        // console.log(a, b);
+        ra.value = `${a} is ${a % 2 === 0 ? "Even" : "Odd"}`;
+        rb.value = `${b} is ${b % 2 === 0 ? "Even" : "Odd"}`;
+      }
+    </script>
+  </body>
+</html>
