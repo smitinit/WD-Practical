@@ -1,1 +1,1 @@
-# WD practical
+# WD practicals
