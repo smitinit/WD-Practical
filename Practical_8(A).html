@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>DOM Validation using js</title>
     <style>
       * {
         padding: 0;
@@ -12,13 +12,73 @@
     </style>
   </head>
   <body>
-    <label for="firstname">First Name: </label>
-    <input id="firstname" name="firstname" type="text" /><br />
+    <label for="name">Name: </label>
+    <input class="name" name="Name" type="text" /><br />
 
-    <label for="middlename">Middle Name:</label>
-    <input id="middlename" name="firstname" type="text" /><br />
+    <label for="address"> Address: </label>
+    <input class="address" name="Address" type="text" /><br />
 
-    <label for="lastname">Last Name:</label>
-    <input id="lastname" name="firstname" type="text" /><br />
+    <label for="gender"> Gender: </label>
+    <input class="gender" name="Gender" type="text" /><br />
+
+    <label for="occupation">Occupation:</label>
+    <input class="occupation" name="Occupation" type="text" /><br />
+
+    <label for="email"> Email: </label>
+    <input class="email" name="Email" type="text" /><br />
+
+    <button type="button" class="btn-check">Submit</button>
+    <br /><br />
+    <span id="message"></span>
+
+    <script>
+      const button = document.querySelector(".btn-check");
+      const message = document.querySelector("#message");
+
+      let emptyInputsArr = [];
+      let html = "";
+
+      button.addEventListener("click", handleCheck);
+
+      // find all empty fields and push to emptyInputsArr(ay)
+      function emptyInputs(allInputs) {
+        allInputs.forEach((inp) => {
+          if (inp.value === "") {
+            emptyInputsArr.push(inp);
+          }
+        });
+      }
+
+      //email verification
+      function CheckEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (emailRegex.test(email)) return 1;
+      }
+
+      function handleCheck() {
+        const email = document.querySelector(".email").value;
+        const allInputs = document.querySelectorAll("input");
+
+        emptyInputs(allInputs);
+
+        if (emptyInputsArr.length !== 0) {
+          message.textContent = `Field(/s) [ ${emptyInputsArr.map(
+            (ip) => " " + ip.name
+          )} ] empty!`;
+
+          emptyInputsArr = [];
+          html = "";
+
+          return;
+        }
+        if (CheckEmail(email) !== 1) {
+          console.log(CheckEmail(email) === 1);
+          message.textContent = "Wrong Email!!";
+          return;
+        }
+
+        message.textContent = "Form uploaded";
+      }
+    </script>
   </body>
 </html>
