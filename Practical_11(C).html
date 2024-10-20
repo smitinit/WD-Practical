@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slide-up and Slide-down with jQuery</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+      #content {
+        width: 300px;
+        padding: 20px;
+        background-color: #f0ad4e;
+        color: white;
+        text-align: center;
+        margin: 20px auto;
+        display: none;
+      }
+
+      button {
+        margin: 20px auto;
+        display: block;
+        padding: 10px 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Slide-up and Slide-down</h1>
+
+    <div id="content">Hello, I slide up and down!</div>
+
+    <button id="slideDownBtn">Slide Down</button>
+    <button id="slideUpBtn">Slide Up</button>
+
+    <script>
+      $(document).ready(function () {
+        $("#slideDownBtn").click(function () {
+          $("#content").slideDown(1000);
+        });
+
+        $("#slideUpBtn").click(function () {
+          $("#content").slideUp(1000);
+        });
+      });
+    </script>
+  </body>
+</html>
