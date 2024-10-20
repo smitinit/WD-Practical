@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fade-in and Fade-out with jQuery</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+      #message {
+        display: none;
+        width: 200px;
+        margin: 20px auto;
+        padding: 10px;
+        text-align: center;
+        background-color: #4caf50;
+        color: white;
+        font-size: 20px;
+      }
+
+      button {
+        margin: 20px auto;
+        display: block;
+        padding: 10px 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Fade-in and Fade-out</h1>
+
+    <div id="message">Hello, I am fading in and out!</div>
+
+    <button id="fadeInBtn">Fade In</button>
+    <button id="fadeOutBtn">Fade Out</button>
+
+    <script>
+      $(document).ready(function () {
+        $("#fadeInBtn").click(function () {
+          $("#message").fadeIn(1000);
+        });
+
+        $("#fadeOutBtn").click(function () {
+          $("#message").fadeOut(1000);
+        });
+      });
+    </script>
+  </body>
+</html>
